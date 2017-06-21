@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<project name="AntBuild" default="compile" basedir=".">
+	<property name="classes.dir" location="classes"/>
+	<property name="src.dir" location="src"/>
+
+	<path id="project.classpath">
+		<pathelement location="${classes.dir}"/>
+	</path>
+
+	<target name="prepare">
+		<mkdir dir="${classes.dir}"/>
+	</target>
+	<target name="compile" depends="prepare">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+			<classpath refid="project.classpath"/>
+		</javac>
+	</target>
+</project>
+
+
+	
